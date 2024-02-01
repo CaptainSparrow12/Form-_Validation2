@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Form Submitted Successfully</h1>
+    
+    <p th:text="${success}"></p>
+
+<!-- Display submitted form data -->
+<p>Name: <span th:text="${formData.name}"></span></p>
+<p>Email: <span th:text="${formData.email}"></span></p>
+<p>Age: <span th:text="${formData.age}"></span></p>
+    
+</body>
+</html>

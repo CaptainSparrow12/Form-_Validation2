@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+</head>
+<body>
+    <form id="complexForm" action="submitForm" method="post" onsubmit="return validateForm()">
+		<h1>User Form </h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Inline JavaScript will be added here in the next step -->
+    
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var age = document.getElementById('age').value;
+
+            if(name == "" || email == "" || password == "" || age == "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if(!emailRegex.test(email)) {
+                alert("Invalid email format");
+                return false;
+            }
+
+            if(age < 18) {
+                alert("You must be at least 18 years old");
+                return false;
+            }
+
+            // Additional validations can be added here
+
+            return true; // Form is valid
+        }
+    </script>
+    
+    
+</body>
+</html>
